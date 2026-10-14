@@ -1,7 +1,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import API_URL from "./api";
+import API_URL from "../api";
 
 const destinationInfo = {
   goa: {

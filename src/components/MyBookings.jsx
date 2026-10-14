@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import API_URL from "./api";
+import API_URL from "../api";
 function MyBookings() {
 
   const location = useLocation();
