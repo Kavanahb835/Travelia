@@ -1,5 +1,5 @@
-
 const API_URL =
-  import.meta.env.VITE_API_URL || "https://travelia-9t4t.onrender.com";
+  import.meta.env.VITE_API_URL ||
+  "https://travelia-9t4t.onrender.com";
 
 export default API_URL;

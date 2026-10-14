@@ -26,8 +26,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "https://travelia-lac.vercel.app"
+        "https://travelia-lac.vercel.app",
+        "https://travelia-1w0bc5z4e-kavanahb835.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
