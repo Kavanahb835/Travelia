@@ -1,12 +1,19 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
-from app.database import engine
+from app.database import engine, Base
+from app import models
 from app.routes.package_routes import router as package_router
 from app.routes.booking_routes import router as booking_router
 from app.routes.auth_routes import router as auth_router
 from app.routes.contact_routes import router as contact_router
+
+
+# Create database tables if they do not already exist
+Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="Travel Agency API",
@@ -14,11 +21,13 @@ app = FastAPI(
     version="1.0.0"
 )
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "https://travelia-lac.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -48,13 +57,8 @@ def health_check():
 
 @app.get("/database-test")
 def database_test():
-
     with engine.connect() as connection:
-
-        result = connection.execute(
-            text("SELECT 1")
-        )
-
+        result = connection.execute(text("SELECT 1"))
         value = result.scalar()
 
     return {
