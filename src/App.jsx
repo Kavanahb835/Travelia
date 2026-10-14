@@ -59,7 +59,7 @@ function Home() {
 
 useEffect(() => {
 
-  fetch('${API_URL}/packages/')
+  fetch(`${API_URL}/packages/`)
     .then((response) => response.json())
     .then((data) => {
       setPackages(data);

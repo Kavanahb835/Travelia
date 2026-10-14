@@ -90,7 +90,7 @@ function DestinationDetails() {
     setLoading(true);
     setError("");
 
-    fetch('${API_URL}/packages/')
+    fetch(`${API_URL}/packages/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Could not load travel packages.");
