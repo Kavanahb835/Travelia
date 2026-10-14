@@ -57,18 +57,34 @@ function Home() {
 
   }, [section]);
 
+
 useEffect(() => {
+  async function loadPackages() {
+    try {
+      const response = await fetch(`${API_URL}/packages/`);
 
-  fetch(`${API_URL}/packages/`)
-    .then((response) => response.json())
-    .then((data) => {
+      if (!response.ok) {
+        throw new Error(`Packages API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!Array.isArray(data)) {
+        console.error("Expected packages array, received:", data);
+        setPackages([]);
+        return;
+      }
+
       setPackages(data);
-    })
-    .catch((error) => {
+    } catch (error) {
       console.error("Error fetching packages:", error);
-    });
+      setPackages([]);
+    }
+  }
 
+  loadPackages();
 }, []);
+
 
 
   return (
