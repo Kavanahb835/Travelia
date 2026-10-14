@@ -19,6 +19,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
 import DestinationDetails from "./components/DestinationDetails";
+import API_URL from "./api";
 
 import {
   BrowserRouter,
@@ -58,7 +59,7 @@ function Home() {
 
 useEffect(() => {
 
-  fetch("http://127.0.0.1:8000/packages/")
+  fetch('${API_URL}/packages/')
     .then((response) => response.json())
     .then((data) => {
       setPackages(data);

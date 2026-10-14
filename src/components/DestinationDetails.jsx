@@ -89,7 +89,7 @@ function DestinationDetails() {
     setLoading(true);
     setError("");
 
-    fetch("http://127.0.0.1:8000/packages/")
+    fetch('${API_URL}/packages/')
       .then((response) => {
         if (!response.ok) {
           throw new Error("Could not load travel packages.");

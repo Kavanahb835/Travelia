@@ -28,7 +28,7 @@ function PackageDetails() {
 
         // Get package details
         const packageResponse = await fetch(
-          `http://127.0.0.1:8000/packages/${id}`
+          `${API_URL}/packages/${id}`
         );
 
         if (!packageResponse.ok) {
@@ -40,7 +40,7 @@ function PackageDetails() {
 
         // Get trip dates
         const tripsResponse = await fetch(
-          `http://127.0.0.1:8000/packages/${id}/trips`
+          `${API_URL}/packages/${id}/trips`
         );
 
         if (!tripsResponse.ok) {

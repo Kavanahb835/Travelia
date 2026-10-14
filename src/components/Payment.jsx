@@ -92,7 +92,7 @@ function Payment() {
       await new Promise((resolve) => setTimeout(resolve, 1200));
 
       const response = await fetch(
-        `http://127.0.0.1:8000/bookings/${booking.booking_id}/demo-payment`,
+        `${API_URL}/bookings/${booking.booking_id}/demo-payment`,
         {
           method: "PUT",
           headers: {
