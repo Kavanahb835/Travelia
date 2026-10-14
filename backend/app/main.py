@@ -22,17 +22,21 @@ app = FastAPI(
 )
 
 
+
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "https://travelia-lac.vercel.app",
-        "https://travelia-1w0bc5z4e-kavanahb835.vercel.app",
     ],
+    allow_origin_regex=r"https://travelia(?:-[a-z0-9]+)?(?:-kavanahhb835)?\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 app.include_router(package_router)
