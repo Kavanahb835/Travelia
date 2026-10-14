@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import API_URL from "./api";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/contact/",
+        '${API_URL}//contact/',
         {
           method: "POST",
           headers: {
