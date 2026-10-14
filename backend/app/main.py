@@ -31,7 +31,7 @@ app.add_middleware(
         "http://localhost:5173",
         "https://travelia-lac.vercel.app",
     ],
-    allow_origin_regex=r"https://travelia(?:-[a-z0-9]+)?(?:-kavanahhb835)?\.vercel\.app",
+    allow_origin_regex=r"https://travelia(?:-[a-z0-9]+)?-kavanahb835\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
