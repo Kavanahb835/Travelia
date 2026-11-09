@@ -97,7 +97,7 @@ useEffect(() => {
         <div className="hero-content">
 
           <p className="small-title">
-            EXPLORE THE WORLD
+            EXPLORE THE WORLD!
           </p>
 
           <h1>
