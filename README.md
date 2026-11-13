@@ -10,8 +10,8 @@ Travelia is a full-stack travel agency web application that helps users explore 
 - Check available trip dates and seats.
 - User registration and login.
 - OTP-based email verification and password recovery.
-- Travel booking and payment workflow.
 - Backend API integration with PostgreSQL.
+- Travel booking and payment workflow.
 
 ## 🛠️ Tech Stack
 
