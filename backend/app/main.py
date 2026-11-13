@@ -50,7 +50,7 @@ def root():
     return {
         "message": "Travel Agency API is running!"
     
-
+    }
 
 @app.get("/health")
 def health_check():
