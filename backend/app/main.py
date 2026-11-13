@@ -49,7 +49,7 @@ app.include_router(contact_router)
 def root():
     return {
         "message": "Travel Agency API is running!"
-    }
+    
 
 
 @app.get("/health")
